@@ -1,0 +1,2 @@
+Enable Preferences: On
+Maze Colors: [Blue, Green, White, Red, Yellow, Orange]
