@@ -8,8 +8,22 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
-        Application.Run(new frmEdgeworkSelection());
+        Application.Run(new frmStartup());
+    }
+
+    public static void switchForm(Form _new)
+    {
+        Form? old = Form.ActiveForm;
+        if (old != null)
+        {
+            _new.StartPosition = FormStartPosition.Manual;
+            _new.Location = old.Location;
+            old.Hide();
+            _new.Show();
+        }
+        else
+        {
+            MessageBox.Show("Form.ActiveForm is null", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

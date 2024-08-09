@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
 namespace KTANE_Assistant;
 
 public partial class frmMain : Form
@@ -22,7 +21,7 @@ public partial class frmMain : Form
 
     private void saveEdgeworkButton_Click(object sender, EventArgs e)
     {
-        string json = JsonConvert.SerializeObject(Assistant.instance.bomb);
+        string json = JsonConvert.SerializeObject(Assistant.instance.getBomb());
         File.WriteAllText("Edgework.json", json);
     }
 
@@ -30,5 +29,19 @@ public partial class frmMain : Form
     {
         Application.Exit();
     }
+
+    private void btnChangeEdgework_Click(object sender, EventArgs e)
+    {
+        Program.switchForm(new frmEdgeworkInput());
+    }
+
+    private void btnStrike_click(object sender, EventArgs e)
+    {
+        Assistant.instance.addStrike();
+    }
+
+    private void btnSelect_Click(object sender, EventArgs e)
+    {
+        Assistant.instance.SelectModule(dropDownModules.SelectedItem.ToString());
+    }
 }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.

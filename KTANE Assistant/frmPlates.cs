@@ -67,7 +67,7 @@ public partial class frmPlates : Form
             return;
         }
 
-        Assistant.instance.bomb = new Bomb()
+        Assistant.instance.setBomb(new Bomb()
         {
             batteries = batteries,
             day = day,
@@ -76,10 +76,8 @@ public partial class frmPlates : Form
             indicators = indicators,
             plates = plateArray,
             serial = serial.ToUpper()
-        };
-        frmMain main = new frmMain();
-        main.Show();
-        Hide();
+        });
+        Program.switchForm(new frmMain());
     }
 
     private int getEmptyPlates()

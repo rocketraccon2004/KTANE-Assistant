@@ -1,6 +1,6 @@
 ﻿namespace KTANE_Assistant
 {
-    partial class frmEdgeworkSelection
+    partial class frmEdgeworkMode
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@
             this.Controls.Add(this.automaticButton);
             this.Controls.Add(this.promptLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmEdgeworkSelection";
+            this.Name = "frmEdgeworkMode";
             this.Text = "EdgeworkSelectionForm";
             this.Load += new System.EventHandler(this.frmEdgeworkSelection_Load);
             this.ResumeLayout(false);

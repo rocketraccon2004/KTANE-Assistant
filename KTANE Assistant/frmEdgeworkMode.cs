@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
 
 namespace KTANE_Assistant;
 
-public partial class frmEdgeworkSelection : Form
+public partial class frmEdgeworkMode : Form
 {
-   public frmEdgeworkSelection()
+   public frmEdgeworkMode()
    {
       InitializeComponent();
    }
@@ -19,18 +18,14 @@ public partial class frmEdgeworkSelection : Form
       {
          json += sr.ReadLine();
       }
-      Assistant.instance.bomb = JsonConvert.DeserializeObject<Bomb>(json);
-      frmMain main = new frmMain();
+      Assistant.instance.setBomb(JsonConvert.DeserializeObject<Bomb>(json));
       sr.Close();
-      Hide();
-      main.Show();
+      Program.switchForm(new frmMain());      
    }
 
    private void manualButton_Click(object sender, EventArgs e)
    {
-      frmEdgeworkInput input = new frmEdgeworkInput();
-      Hide();
-      input.Show();
+      Program.switchForm(new frmEdgeworkInput());
    }
 
    private void frmEdgeworkSelection_Load(object sender, EventArgs e)

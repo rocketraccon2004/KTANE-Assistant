@@ -11,13 +11,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="Preferences.txt">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <Compile Update="frmButton.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="frmStartup.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="frmTurnTheKey.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="frmWires.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

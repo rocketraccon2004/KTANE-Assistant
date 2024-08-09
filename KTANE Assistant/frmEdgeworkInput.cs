@@ -33,6 +33,11 @@ public partial class frmEdgeworkInput : Form
         Day day = (Day) Enum.Parse(typeof(Day), dayOfWeekComboBox.Text.ToString());
         string serial = serialNumberTextBox.Text;
 
+        if (!int.TryParse(serial[5].ToString(), out _))
+        {
+            MessageBox.Show("Invalid Parameter: Serial must end in digit");
+        }
+        
         if (!int.TryParse(batteryTextBox.Text, out batteries))
         {
             MessageBox.Show($"Invalid Parameter: Batteries ({batteryTextBox.Text})");
@@ -115,8 +120,6 @@ public partial class frmEdgeworkInput : Form
                 visible = frkVisibleCheckBox.Checked
             },
         };
-        frmPlates _frmPlates = new frmPlates();
-        _frmPlates.start(batteries, holders, plates, day, indicators, serial);
-        Hide();
+        Program.switchForm(new frmPlates());
     }
 }

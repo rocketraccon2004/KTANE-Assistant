@@ -1,6 +1,6 @@
 ﻿namespace KTANE_Assistant;
 
-public struct Bomb
+public class Bomb
 {
     public int batteries;
     public int holders;
